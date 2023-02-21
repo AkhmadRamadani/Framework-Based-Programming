@@ -1,0 +1,49 @@
+<!-- *** Author : Akhmad Ramadani *** -->
+<!-- *** NIM    : 2041720002 *** -->
+<!-- *** Kelas  : TI-3B  *** -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Uncover</title>
+</head>
+
+<body>
+    <h1>Belajar Javascript</h1>
+    <div id="root"></div>
+    <button onclick="renderData()">Tampilkan Data Mahasiswa</button>
+    <script>
+        const mahasiswas = [
+            {
+                nama: "Eka",
+                umur: 19,
+                jurusan: "Teknik Informatika",
+            },
+            {
+                nama: "Lisa",
+                umur: 18,
+                jurusan: "Sistem Informasi",
+            },
+            {
+                nama: "Rudi",
+                umur: 19,
+                jurusan: "Teknik Elektro",
+            }
+        ];
+
+        const prosesMahasiswa = (mahasiswa) => 
+        `<p> ${mahasiswa.nama} (${mahasiswa.umur} tahun) - <i>${mahasiswa.jurusan}</i> </p>`;
+
+        const formatMahasiswa = (mahasiswas).map(prosesMahasiswa);
+
+        const renderData = () => {
+            document.getElementById('root').innerHTML = formatMahasiswa.join('');
+        }
+    </script>
+</body>
+
+</html>
