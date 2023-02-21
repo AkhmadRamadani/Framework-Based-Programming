@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Uncover</title>
+</head>
+
+<body>
+    <h1>Belajar Javascript (ES6)</h1>
+    <script>
+        let laptopRama = {
+            milik: "Rama",
+            merek: "Asus",
+            hidupkanLaptop: () => `Hidupkan laptop ${this.merek} milik ${this.milik}`,
+        }
+
+        console.log(laptopRama.merek);
+        console.log(laptopRama.milik);
+        console.log(laptopRama.hidupkanLaptop());
+
+        /// Undefined because merek and milik is not defined in global scope {this}
+        /// But, defined in laptopRama object
+        /// So, we can access it by using laptopRama.merek and laptopRama.milik
+    </script>
+</body>
+
+</html>
