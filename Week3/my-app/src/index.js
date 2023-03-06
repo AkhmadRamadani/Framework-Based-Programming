@@ -4,6 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// function HelloComponent() {
+//   return HelloComponent;
+// }
+
+// class StateFullComponent extends React.Component {
+//   render() {
+//     return <p>Statefull Component</p>;
+//   }
+// }
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
