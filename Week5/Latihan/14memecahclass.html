@@ -1,0 +1,53 @@
+<!-- *** Author : Akhmad Ramadani *** -->
+<!-- *** NIM    : 2041720002 *** -->
+<!-- *** Kelas  : TI-3B  *** -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Uncover</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="./js/react.development.js" crossorigin></script>
+    <script src="./js/react-dom.development.js" crossorigin></script>
+    <script src="./js/babel.js"></script>
+    <script type="text/babel">
+
+
+        class Mahasiswa extends React.Component {
+            render() {
+                return (
+                    <figure>
+                        <img src="img/people1.jpeg" alt="Eka Irawan" />
+                        <figcaption>
+                            Rudi Irawan (Teknik Informatika)
+                        </figcaption>
+                    </figure>
+                )
+            }
+        }
+
+        class DaftarMahasiswa extends React.Component {
+            render() {
+                return (
+                    <React.Fragment>
+                        <h1>Daftar Mahasiswa - Polinema</h1>
+                        <hr />
+                        <Mahasiswa />
+
+                    </React.Fragment>
+                )
+            }
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<DaftarMahasiswa />)
+    </script>
+</body>
+
+</html>
