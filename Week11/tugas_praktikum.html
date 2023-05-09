@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <style>
+        #root {
+            display: flex;
+            justify-content: center;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        button {
+            background-color: white;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-weight: bold;
+            border: 1px solid gray;
+            box-shadow: 2px 2px 2px black;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: 1px 1px 1px black;
+            background-color: #f1f1f1;
+        }
+
+        img {
+            box-shadow: 0px 0px 20px 0px black;
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        figcaption {
+            text-align: center;
+            background-color: gainsboro;
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 15px 0;
+            box-shadow: 12px 12px 0px black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.js"></script>
+    <script type="text/babel">
+
+        const Mahasiswa = (props) => {
+            const handleTukarMahasiswaBaru = () => {
+                props.onTukarMahasiswaBaru({
+                    nama: "Lisa",
+                    jurusan: "Sistem Informasi",
+                    foto: "lisa.jpeg"
+                });
+            };
+
+            return (
+                <>
+                    <button onClick={handleTukarMahasiswaBaru}>Tukar Mahasiswa Baru</button>
+
+                    <figure>
+                        <img src={'img/' + props.mahasiswa.foto} alt={props.mahasiswa.nama} />
+                        <figcaption>{props.mahasiswa.nama} - {props.mahasiswa.jurusan}</figcaption>
+                    </figure>
+                </>
+            );
+        };
+
+        const MyApp = () => {
+            const [mahasiswa, setMahasiswa] = React.useState({
+                nama: "Eka",
+                jurusan: "Teknik Informatika",
+                foto: "eki.jpeg"
+            });
+
+            const handleTukarMahasiswaBaru = (mahasiswaBaru) => {
+                setMahasiswa({
+                    nama: mahasiswaBaru.nama,
+                    jurusan: mahasiswaBaru.jurusan,
+                    foto: mahasiswaBaru.foto
+                });
+            };
+
+            return (
+                <div>
+                    <Mahasiswa
+                        mahasiswa={mahasiswa}
+                        onTukarMahasiswaBaru={handleTukarMahasiswaBaru}
+                    />
+                </div>
+            );
+        };
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<MyApp />);
+    </script>
+
+</body>
+
+</html>
